@@ -8,6 +8,8 @@ module.exports = {
         'primary-200': '#FFF8DE',
         'primary-300': '#FFEDB2',
         neutral: '#000',
+        'neutral-300': '#949494',
+        'neutral-400': '#636363',
       },
     },
   },

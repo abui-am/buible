@@ -1,22 +1,33 @@
 ---
+import SectionWithTitle from '../components/SectionWithTitle.astro';
 import Skill from '../components/Skill.astro';
-import Tag from '../components/Tag.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title='Welcome to Astro.'>
   <main class='bg-primary-200'>
-    <div style='height: calc(100vh - 152px);' class='relative'>
-      <img src='/images/profile.png' class='object-cover h-full' />
+    <div style='height: calc(97vh - 68px - 68px - 32px);' class='relative'>
+      <img src='/images/profile.jpg' class='object-cover h-full' />
       <div
-        class='from-[rgba(0,0,0,0.8)] to-transparent bg-gradient-to-t absolute bottom-0 p-4 w-full h-2/5 justify-end flex flex-col'
+        class='from-[rgba(0,0,0,0.8)] to-transparent bg-gradient-to-t absolute bottom-0 p-6 w-full h-2/5 justify-end flex flex-col'
       >
-        <h2 class='font-bold text-3xl text-white'>Abui</h2>
+        <h2 class='font-bold text-3xl text-white'>Abuidillah Adjie Muliadi</h2>
       </div>
     </div>
-    <div class='p-4 flex-col flex gap-6'>
+    <div class='p-6 flex-col flex gap-8'>
+      <SectionWithTitle title='About me'>
+        <div class='font-bold text-lg'>
+          hit me on <a
+            class='underline'
+            href='https://www.linkedin.com/in/abuidillah-adjie-muliadi-bb0816190/'
+          >
+            LinkedIn</a
+          >
+           😏
+        </div>
+      </SectionWithTitle>
       <Skill
-        title='My front-end skills'
+        title='Front-end skills'
         skills={[
           'ReactJS',
           'NextJS',
@@ -28,12 +39,12 @@ import Layout from '../layouts/Layout.astro';
         ]}
       />
       <Skill
-        title='My back-end skills'
+        title='Back-end skills'
         skills={['ExpressJS', 'Javascript', 'Typescript', 'PHP']}
       />
 
       <Skill
-        title='My additional skills'
+        title='Additional skills'
         skills={['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Canva']}
       />
     </div>
