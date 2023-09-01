@@ -1,0 +1,43 @@
+---
+import Skill from '../components/Skill.astro';
+import Tag from '../components/Tag.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title='Welcome to Astro.'>
+  <main class='bg-primary-200'>
+    <div style='height: calc(100vh - 152px);' class='relative'>
+      <img src='/images/profile.png' class='object-cover h-full' />
+      <div
+        class='from-[rgba(0,0,0,0.8)] to-transparent bg-gradient-to-t absolute bottom-0 p-4 w-full h-2/5 justify-end flex flex-col'
+      >
+        <h2 class='font-bold text-3xl text-white'>Abui</h2>
+      </div>
+    </div>
+    <div class='p-4 flex-col flex gap-6'>
+      <Skill
+        title='My front-end skills'
+        skills={[
+          'ReactJS',
+          'NextJS',
+          'Javascript',
+          'Typescript',
+          'HTML',
+          'CSS',
+          'TailwindCSS',
+        ]}
+      />
+      <Skill
+        title='My back-end skills'
+        skills={['ExpressJS', 'Javascript', 'Typescript', 'PHP']}
+      />
+
+      <Skill
+        title='My additional skills'
+        skills={['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Canva']}
+      />
+    </div>
+  </main>
+
+  <style></style>
+</Layout>

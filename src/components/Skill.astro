@@ -1,0 +1,16 @@
+---
+import Tag from './Tag.astro';
+interface Props {
+  title: string;
+  skills: string[];
+}
+
+const { skills, title } = Astro.props;
+---
+
+<div>
+  <h4 class='text-lg text-gray-600 mb-1'>{title}</h4>
+  <div class='flex flex-wrap gap-2'>
+    {skills.map((skill) => <Tag>{skill}</Tag>)}
+  </div>
+</div>

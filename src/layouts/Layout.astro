@@ -1,0 +1,85 @@
+---
+import Hamburger from '../icons/Hamburger';
+import Filter from '../icons/Filter';
+import People from '../icons/People';
+import LikeFilled from '../icons/LikeFilled';
+import Project from '../icons/Project';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class='h-screen'>
+    <div class='max-w-md mx-auto h-max-screen h-full flex flex-col'>
+      <div class='w-full flex bg-white justify-between p-4'>
+        <Hamburger width={28} />
+        <span>Buible</span>
+        <Filter width={28} />
+      </div>
+      <div class='flex-1 m-4 rounded-xl overflow-x-hidden'>
+        <slot />
+      </div>
+      <div class='w-full flex bg-white justify-between p-4'>
+        <People width={28} />
+        <Project width={28} />
+        <LikeFilled width={28} />
+      </div>
+    </div>
+  </body>
+</html>
+<style is:global>
+  @font-face {
+    font-family: 'Circular';
+    font-style: black;
+    font-weight: 800;
+    font-display: swap;
+    src: url('/fonts/circular20cyr_black.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'Circular';
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/circular20cyr_bold.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'Circular';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/circular20cyr_book.otf') format('opentype');
+  }
+
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    background-size: 224px;
+    scroll-behavior: smooth;
+  }
+
+  * {
+    font-family: Circular, sans-serif;
+  }
+</style>
